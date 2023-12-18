@@ -6,4 +6,4 @@ metadata:
   namespace: flux-system
 spec:
   image: docker.io/shital1999/python-rest-api
-  interval: 1m0s
+  interval: 5m0s
