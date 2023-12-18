@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-rest-api
+  namespace: flux-system
+spec:
+  selector:
+    matchLabels:
+      app: python-rest-api
+  template:
+    metadata:
+      labels:
+        app: python-rest-api
+    spec:
+      containers:
+      - name: python
+        image: docker.io/shital1999/python-rest-api:1.0.0 # {"$imagepolicy": "flux-system:python-rest-api"}
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 9898
+          protocol: TCP
